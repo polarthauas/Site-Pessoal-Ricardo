@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #eee;
+    text-align: center;
+}
+
+a {
+    color: #00ff;
+}
+
+/* ========== Index ========== */
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+        transform: scale(1);
+
+    }
+    50% {
+        background-position: 100% 50%;
+        transform: scale(1.2);
+    }
+    100% {
+        background-position: 0% 50%;
+        transform: scale(1);
+    }
+}
+
+#MyName {
+    background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 5s linear infinite;
+}
+
+header {
+    margin-top: 15px;
+}
+
+header img {
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 0 15px #00ffc8;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin: 0.3rem 0;
+}
+
+h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: #00ffc8;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+/* ========== COLEGIOS ========== */
+
+#colegios ol li{
+    list-style-type: none; 
+    margin-bottom: 26px;
+}
+
+
+/* ========== HISTORIA_IF ========== */
+
+#historia_if { 
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 950px;
+    margin: 30px auto;
+    line-height: 1.7;
+    color: #333;
+}
+
+#historia_if p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+
+/* ========== SIDEBAR ==========*/
+
+#menu-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #00ffc8;
+    color: #121212;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px #00ffc8;
+}
+
+#main-content {
+    transition: margin-left 0.4s ease;
+}
+
+
+#main-content.shifted {
+    margin-left: clamp(220px, 25vw, 280px);
+    padding-left: clamp(50px, 5vw, 150px);
+    transition: margin-left 0.4s ease;
+}
+
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: clamp(220px, 25vw, 280px); 
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    transition: transform 0.4s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 2px 0 10px rgba(0, 255, 200, 0.2);
+    transform: translateX(-100%); 
+}
+
+
+#sidebar.active {
+    transform: translateX(0); 
+}
+
+
+#close-menu {
+    align-self: flex-end;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+#sidebar nav a {
+    display: block;
+    margin: 0.7rem 0;
+    color: #00ffc8;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.2s;
+}
+
+#sidebar nav a:hover {
+    color: #fff;
+}
+
+#sidebar img {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px blue;
+}
+
+/* ========== HORÁRIOS DE AULA ========== */
+
+#horarios { 
+    width: 95%;
+    margin: 5rem auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+}
+
+#horarios th, #horarios td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+#horarios th {
+    background-color: #00ffc8;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #121212;
+}
+
+/* ========== RICARDO ========== */
+
+#ricardo-img {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: 0;
+    display: none;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+#ricardo {
+    background: linear-gradient(to top, red, yellow);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 2s linear infinite;
+    display: inline-block;
+}
+
+#sidebar a.active {
+    color: white;
+}
+
+#main-content > * {
+    transition: transform 1s ease-in, opacity 1s;
+}
+
